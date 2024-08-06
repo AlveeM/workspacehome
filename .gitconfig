@@ -1,0 +1,32 @@
+# This is a basic gitconfig template that includes some bare minimums for
+# interacting with git in a workspace.  The content between <Angle Brackets>
+# in this file must be replaced with values appropriate to you.  This can 
+# Be done manually or with the following series of commands run from the current
+# folder:
+#
+#  $ HOME=$(pwd) git config --global user.name "Bits the Dog"
+#  $ HOME=$(pwd) git config --global user.email "bits@datadoghq.com"
+#  $ HOME=$(pwd) git config --global user.signingkey "$(git config --global user.signingkey)"
+
+[user]
+        # The name you want to appear as the author of your commits
+        name = <YOUR NAME>
+	# The e-mail address that is associated to the author of your commits
+        email = <YOUR EMAIL>
+# This next section is optional and can be omitted if you do not use ssh git
+# commit signing.  However, doing so is highly encouraged, and if you have not
+# started using this workflow, see the onboarding docs for that:
+#    https://datadoghq.atlassian.net/wiki/spaces/SECENG/pages/2610300092/Project+Iota+Git+Commit+Signing+Onboarding
+#         # This is an ssh key that can be used to sign your commits, it should
+#         # be made available to your workspace via ssh agent forwarding and can be
+#         # seen on your laptop by issuing `git config --global user.signingkey`
+#         signingkey = <YOUR COMMIT SIGNING PUBLIC KEY>
+# [commit]
+# 	gpgsign = true
+# [gpg]
+# 	format = ssh
+
+
+# This is a url rewrite that helps [go and maybe rust] tooling that downloads libraries from our private repos
+[url "git@github.com:DataDog/"]
+        insteadOf = https://github.com/DataDog/
